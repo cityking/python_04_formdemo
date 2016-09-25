@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加留言</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<form method="post" action="{% url 'add' %}" class="smart-green">
+    {% csrf_token %}
+{{ feedback_form.as_p }}
+    <input type="submit" value="send">
+</form>
+</body>
+</html>

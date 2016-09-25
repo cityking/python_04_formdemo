@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言列表</title>
+</head>
+<body>
+{% for feedback in feedbacks %}
+    {{ feedback.name }}<br/>
+    {{ feedback.email  }}|{{ feedback.message }}|{{ feedback.subject.name }}<br/>
+    <a href="{% url 'update2' feedback.id %}">修改留言</a>
+    <hr>
+
+{% endfor %}
+<a href="{% url 'add2' %}">新增留言</a>
+</body>
+</html>

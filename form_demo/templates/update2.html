@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言表单</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+<form action="{% url 'update2' feedback.id%}" method="post" class="smart-green">
+    {% csrf_token %}
+<h1>Contact Form
+<span>Please fill all the texts in the fields.</span>
+</h1>
+<label>
+<span>Your Name :</span>
+{{ feedback_form.name }}
+
+</label>
+<label>
+<span>Your Email :</span>
+    {{ feedback_form.email }}
+
+</label>
+<label>
+<span>Message :</span>
+    {{ feedback_form.message }}
+
+</label>
+<label>
+<span>Subject :</span>
+    {{ feedback_form.subject }}
+</label>
+<label>
+<span>&nbsp;</span>
+<input type="submit" class="button" value="Send" />
+</label>
+</form>
+</body>
+</html>
